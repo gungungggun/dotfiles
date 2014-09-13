@@ -1,0 +1,94 @@
+# element
+snippet e
+	{
+		${1}
+	}
+# class
+snippet c
+	.${1:class} {
+		${2}
+	}
+# id
+snippet i
+	#${1:id} {
+		${2}
+	}
+
+snippet ex
+	@extend %${1:clearfix};
+	${2}
+
+snippet cf
+	@extend %clearfix;
+	${1}
+
+# @include - Use a mixin
+snippet inc
+	@include ${1:mixin};
+	${2}
+
+# @mixin - Define a mixin
+snippet mix
+	@mixin ${1:name} {
+		${2}
+	}
+
+#borders
+snippet b
+	border: ${1:1px} ${2:solid} ${3:#000};
+	${4}
+snippet bt
+	border-top: ${1:1px} ${2:solid} ${3:#000};
+	${4}
+snippet bb
+	border-bottom: ${1:1px} ${2:solid} ${3:#000};
+	${4}
+snippet bl
+	border-left: ${1:1px} ${2:solid} ${3:#000};
+	${4}
+snippet br
+	border-right: ${1:1px} ${2:solid} ${3:#000};
+	${4}
+snippet rd
+	@include border-radius(${1:5px});
+	${2}
+snippet bx
+	@include box-sizing(border-box);
+	${1}
+snippet tr
+	@include transition($transition-duration);
+	${1}
+snippet op
+	@include opacity(${1:.5});
+
+#Pseudo-elements
+snippet :b
+	&:before {
+		content: '${1: }';
+		${2}
+	}
+snippet :a
+	&:after {
+		content: '${1: }';
+		${2}
+	}
+snippet :h
+	&:hover {
+		${1}
+	}
+snippet :c
+	&:checked {
+		${1}
+	}
+snippet :l
+	&:last-child {
+		${2}
+	}
+snippet :f
+	&:first-child {
+		${2}
+	}
+snippet :f
+	&:nth-child(${1:2n}) {
+		${2}
+	}

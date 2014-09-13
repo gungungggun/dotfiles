@@ -1,0 +1,54 @@
+# element
+snippet @if
+	@if(${1})
+		${2}
+	@endif
+
+snippet @el
+	@else
+		${1}
+
+snippet @els
+	@elseif(${1})
+		${2}
+
+snippet @ifi
+	@if(isset(${1}))
+		${2}
+	@endif
+
+snippet @ex
+	@extends('${1}')
+	${2}
+
+snippet @in
+	@include('${1}')
+	${2}
+
+snippet @yi
+	@yield('${1}')
+	${2}
+
+snippet @s
+	@section(${1})
+		${2}
+	@stop
+
+snippet @fe
+	@foreach(${1} as ${2:$k} => ${3:$v})
+		${4}
+	@endforeach
+
+snippet ds
+	<div class="area${1}">
+		<section class="wrap${2}">
+			${3}
+		</section>
+	</div>
+
+snippet dd
+	<div class="area${1}">
+		<div class="wrap${2}">
+			${3}
+		</div>
+	</div>
