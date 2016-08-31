@@ -935,6 +935,7 @@ nnoremap <silent> [unite]s :<C-u>Unite snippet<CR>
 nnoremap <silent> [unite]w :<C-u>Unite webcolorname<CR>
 nnoremap <silent> [unite], :<C-u>Unite menu:shortcut<CR>
 nnoremap <silent> [unite]e :<C-u>Unite codic<CR>
+nnoremap <silent> [unite]g :<C-u>Unite grep<CR>
 vnoremap /g y:Unite grep::-iHRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
 
 " ファイル検索用
@@ -1032,7 +1033,9 @@ nnoremap <silent> [git]a :<C-u>Gwrite<Enter>
 nnoremap <silent> [git]c :<C-u>Gcommit<Enter>
 nnoremap <silent> [git]C :<C-u>Git commit --amend<Enter>
 nnoremap <silent> [git]b :<C-u>Gblame<Enter>
-nnoremap <silent> [git]r :<C-u>Gremove<Enter>
+nnoremap <silent> [git]m :<C-u>Gremove<Enter>
+nnoremap <silent> [git]r :<C-u>Gread<Enter>
+nnoremap <silent> [git]p :<C-u>Git push origin master<Enter>
 
 let s:hooks = neobundle#get_hooks("gitv")
 function! s:hooks.on_source(bundle)
@@ -1268,6 +1271,73 @@ let g:syntastic_enable_signs=1
 let g:syntastic_error_symbol='x'
 let g:syntastic_warning_symbol='!'
 let g:syntastic_quiet_messages = {"level":"warnings"}
+"===================================  END  ===================================}}}
+
+"--------------------------------------------------------------------------------
+" LIGHTLINE CONFIGURATION                                                           {{{
+"--------------------------------------------------------------------------------
+
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'mode_map': {'c': 'NORMAL'},
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'], ['fugitive', 'filename'] ]
+      \ },
+      \ 'component_function': {
+      \   'modified': 'MyModified',
+      \   'readonly': 'MyReadonly',
+      \   'fugitive': 'MyFugitive',
+      \   'filename': 'MyFilename',
+      \   'fileformat': 'MyFileformat',
+      \   'filetype': 'MyFiletype',
+      \   'fileencoding': 'MyFileencoding',
+      \   'mode': 'MyMode',
+      \ }
+      \ }
+
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? ' ' : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyFugitive()
+  try
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head') && strlen(fugitive#head())
+      return ' ' . fugitive#head()
+    endif
+  catch
+  endtry
+  return ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! MyFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! MyMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
 "===================================  END  ===================================}}}
 
 "--------------------------------------------------------------------------------
