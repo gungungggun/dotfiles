@@ -1,5 +1,8 @@
 cd ~
 
+export GOPATH=$HOME
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
 export XDG_CONFIG_HOME=$HOME/.config
 
 ###########
@@ -101,7 +104,7 @@ alias sudo='sudo '
 
 alias -g @g='| ag'
 
-export WIN_HOME=/mnt/c/Users/GUN
+export WIN_HOME=/mnt/c/Users/gungu
 alias wincd='cd $WIN_HOME'
 
 
