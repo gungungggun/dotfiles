@@ -4,6 +4,8 @@ export GOPATH=$HOME
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 export XDG_CONFIG_HOME=$HOME/.config
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+#export TERM=xterm-color256
 
 ###########
 # general
