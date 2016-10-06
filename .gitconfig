@@ -1,5 +1,7 @@
 [user]
 	name = gun
 	email = gungungggun@gmail.com
+[url "https://"]
+	insteadOf = git://
 [ghq]
-	  root = ~/src
+	root = ~/src
