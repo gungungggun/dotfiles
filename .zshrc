@@ -1,7 +1,14 @@
 cd ~
 
+###########
+# env
+###########
+
+# 日本語を使用
+export LANG=ja_JP.UTF-8
+
 export GOPATH=$HOME
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:~/.local/bin
 
 export XDG_CONFIG_HOME=$HOME/.config
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -27,6 +34,15 @@ PROMPT='[%F{green}%d%f]# '
 # 入力したコマンドが存在せずかつディレクトリ名と一致するならディレクトリに cd する
 # 例 /usr/bin と入力すると /usr/bin ディレクトリに移動
 setopt auto_cd
+
+# 自動でpushdを実行
+setopt auto_pushd
+
+# pushdから重複を削除
+setopt pushd_ignore_dups
+
+# コマンドミスを修正
+setopt correct
 
 # tmuxの起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
@@ -103,6 +119,7 @@ alias mkdir='mkdir -p'
 alias ag='ag -S --stats'
 # sudoでaliasを効かす
 alias sudo='sudo '
+alias back='pushd'
 
 alias -g @g='| ag'
 
