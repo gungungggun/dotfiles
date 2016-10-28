@@ -6,4 +6,4 @@
 [core]
 	autoCRLF = false
 [ghq]
-	root = ~/src
+	root = ~/go/src
