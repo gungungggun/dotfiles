@@ -7,7 +7,7 @@ cd ~
 # 日本語を使用
 export LANG=ja_JP.UTF-8
 
-export GOPATH=$HOME
+export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:~/.local/bin
 
 export XDG_CONFIG_HOME=$HOME/.config

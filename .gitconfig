@@ -3,5 +3,7 @@
 	email = gungungggun@gmail.com
 [url "https://"]
 	insteadOf = git://
+[core]
+	autoCRLF = false
 [ghq]
-	root = ~/src
+	root = ~/go/src
