@@ -12,7 +12,9 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:~/.local/bin
 
 export XDG_CONFIG_HOME=$HOME/.config
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
-#export TERM=xterm-color256
+
+export WIN_HOME=/mnt/c/Users/gungu
+#export TERM=xterm-256color
 
 ###########
 # general
@@ -26,7 +28,8 @@ compinit
 bindkey -v
 
 # 左の表示
-PROMPT='[%F{green}%d%f]# '
+PROMPT='[%F{green}%d%f]
+# '
 
 # 右の表示
 #RPROMPT='[%F{green}%d%f]'
@@ -46,6 +49,10 @@ setopt correct
 
 # tmuxの起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+
+# 名前付きディレクトリ
+setopt CDABLE_VARS
+hash -d win=${WIN_HOME}
 
 ###########
 # color
@@ -104,8 +111,8 @@ setopt hist_no_store
 # 履歴をインクリメンタルに追加
 setopt inc_append_history
 # インクリメンタルからの検索
-bindkey "^R" history-incremental-search-backward
-bindkey "^S" history-incremental-search-forward
+#bindkey "^P" history-incremental-search-backward
+#bindkey "^N" history-incremental-search-forward
 
 
 ###########
@@ -122,10 +129,6 @@ alias sudo='sudo '
 alias back='pushd'
 
 alias -g @g='| ag'
-
-export WIN_HOME=/mnt/c/Users/gungu
-alias wincd='cd $WIN_HOME'
-
 
 ###########
 # my command

@@ -3,5 +3,13 @@ repo = 'Shougo/deoplete.nvim'
 on_i = 1
 
 [[plugins]]
-repo = 'sjl/gundo.vim'
-on_cmd = ['GundoToggle']
+repo = 'simnalamburt/vim-mundo'
+on_cmd = ['MundoToggle']
+hook_add = '''
+let g:loaded_python_provider = 1
+let g:mundo_prefer_python3 = 1
+set undofile
+set undodir=~/.config/nvim/undo
+set nobackup
+set noswapfile
+'''
