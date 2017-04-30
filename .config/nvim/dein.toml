@@ -5,8 +5,14 @@ repo = 'Shougo/dein.vim'
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
-[[plugins]] # solarized
-repo = 'altercation/vim-colors-solarized'
+#[[plugins]] # solarized
+#repo = 'altercation/vim-colors-solarized'
+
+[[plugins]] # solarized(qt)
+repo = 'JulioJu/neovim-qt-colors-solarized-truecolor-only'
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -14,9 +20,9 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'h1mesuke/vim-alignta'
 
-[[plugins]]
-repo = 't9md/vim-quickhl'
-
+#[[plugins]]
+#repo = 't9md/vim-quickhl'
+#
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 
@@ -43,6 +49,9 @@ repo = 'kana/vim-textobj-user'
 
 [[plugins]]
 repo = 'kana/vim-textobj-line'
+
+[[plugins]]
+repo = 'ntpeters/vim-better-whitespace'
 
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'

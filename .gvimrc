@@ -2,12 +2,18 @@
 au GUIEnter * simalt ~x
 
 " フォントの設定
-set guifont=Ricty:h12:cSHIFTJIS
+set guifont=Ricty_Diminished_for_Powerline:h12:cSHIFTJIS:qDRAFT
+
+" ビープ音を無効
+set vb t_vb=
+
+"colorschem pablo
 
 " カラースキーム solarizedの設定
 let g:solarized_contrast="hight"
 let g:solarized_italic=0
-call togglebg#map("<f5>")
+"call togglebg#map("<f5>")
+set background=dark
 
 colorschem solarized
 

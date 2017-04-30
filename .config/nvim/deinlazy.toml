@@ -6,7 +6,7 @@ on_i = 1
 repo = 'Shougo/unite.vim'
 on_cmd = ['Unite', 'UniteWithBufferDir']
 hook_add = '''
-nnoremap <silent> fb :<C-u>Unite buffer<CR>
+source ~/.config/nvim/vimrc.d/plugins/lazy/unite.rc.vim
 '''
 
 [[plugins]]
@@ -14,7 +14,15 @@ repo = 'Shougo/vimfiler'
 depends = 'unite.vim'
 on_cmd = ['VimFilerTab', 'VimFiler', 'VimFilerExplorer']
 hook_add = '''
-source ~/.config/nvim/plugins/vimfiler.rc.vim
+source ~/.config/nvim/vimrc.d/plugins/lazy/vimfiler.rc.vim
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+on_cmd = ['OverCommandLine']
+hook_add = '''
+nnoremap <Backspace> :OverCommandLine<CR>%s/
+vnoremap <Backspace> "xy:OverCommandLine<CR>%s/<C-R>=escape(@x, '\\/.*$^~[]')<CR>//gc<Left><Left><Left>
 '''
 
 [[plugins]]
@@ -23,8 +31,4 @@ on_cmd = ['MundoToggle']
 hook_add = '''
 let g:loaded_python_provider = 1
 let g:mundo_prefer_python3 = 1
-set undofile
-set undodir=~/.config/nvim/undo
-set nobackup
-set noswapfile
 '''
