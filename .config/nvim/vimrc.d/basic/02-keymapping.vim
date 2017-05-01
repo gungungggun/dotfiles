@@ -44,21 +44,11 @@ inoremap <C-j> <DOWN>
 inoremap <C-k> <UP>
 inoremap <C-l> <RIGHT>
 
-" 括弧系は中央に移動
-inoremap {} {}<LEFT>
-inoremap [] []<LEFT>
-inoremap () ()<LEFT>
-inoremap "" ""<LEFT>
-inoremap '' ''<LEFT>
-inoremap <> <><LEFT>
+" tagsジャンプの時に複数ある時は一覧表示
+nnoremap <C-]> g<C-]>
 
-" 括弧で中央に移動したくない場合
-inoremap {}} {}
-inoremap []] []
-inoremap ()) ()
-inoremap """ ""
-inoremap ''' ''
-inoremap <>> <>
+" インサート抜ける
+inoremap jj <ESC>
 
 " 全選択 vaeとかでもいけるからいらんかも
 nnoremap <silent> <Space>a ggV<S-g>$
@@ -76,3 +66,33 @@ nnoremap <silent> <Space>/. :setl spell!<CR>:setl spell?<CR>
 nnoremap <silent> <Space>// :set expandtab!<CR>
 " タブとスペースを変換
 nnoremap <silent> <Space>/\ :retab!<CR>
+" カーソル位置
+nnoremap <silent> <Space>c :<C-u>setlocal cursorline! cursorcolumn!<CR>
+
+" 縦連番インクリメント
+command! -count -nargs=1 ContinuousNumber let c = col('.')|for n in range(1, <count>?<count>-line('.'):1)|exec 'normal! j' . n . <q-args>|call cursor('.', c)|endfor
+vnoremap <silent> <C-a>   :ContinuousNumber <C-a><CR>
+vnoremap <silent> <C-x>   :ContinuousNumber <C-x><CR>
+vnoremap <silent>+   :ContinuousNumber <C-a><CR>
+vnoremap <silent>-   :ContinuousNumber <C-x><CR>
+
+" escでハイライトをオフ
+nnoremap <silent><ESC> <ESC>:noh<CR>
+
+" カーソル下の文字検索
+vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
+
+" 改行
+" ノーマルモード中でもエンターキーで改行挿入でノーマルモードに戻る
+nnoremap <CR> i<CR><ESC>
+"行末のときとかはこっちがいいよ
+nnoremap <C-CR> o<ESC>
+" oの改行
+inoremap <C-CR> <ESC>o
+
+" ヴィジュアルモードでインデント調整したらまたヴィジュアルモードに戻る
+vnoremap < <gv
+vnoremap > >gv|
+
+" Exモードなんて使わない
+map Q <Nop>

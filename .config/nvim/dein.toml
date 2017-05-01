@@ -1,15 +1,14 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]] # toml syntax
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
 #[[plugins]] # solarized
 #repo = 'altercation/vim-colors-solarized'
 
 [[plugins]] # solarized(qt)
 repo = 'JulioJu/neovim-qt-colors-solarized-truecolor-only'
+
+[[plugins]]
+repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'vim-syntastic/syntastic'
@@ -18,22 +17,88 @@ repo = 'vim-syntastic/syntastic'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'h1mesuke/vim-alignta'
+repo = 'AndrewRadev/splitjoin.vim'
 
-#[[plugins]]
-#repo = 't9md/vim-quickhl'
-#
+[[plugins]]
+repo = 'vim-scripts/Visual-Mark'
+hook_add = '''
+map <unique> <F3> <Plug>Vm_toggle_sign
+map <silent> <unique> mm <Plug>Vm_toggle_sign
+'''
+
+[[plugins]]
+repo = 'fuenor/qfixhowm.git'
+
+[[plugins]]
+repo = 'kana/vim-submode'
+
+[[plugins]]
+repo = 'koron/codic-vim'
+
+[[plugins]]
+repo = 't9md/vim-choosewin'
+hook_add = '''
+let g:choosewin_overlay_enable          = 1
+let g:choosewin_overlay_clear_multibyte = 1
+nmap - <Plug>(choosewin)
+'''
+
+[[plugins]]
+repo = 'tpope/vim-abolish'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+
+[[plugins]]
+repo = 'h1mesuke/vim-alignta'
+hook_add = '''
+vmap ; :Alignta<Space>
+'''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/open-browser.rc.vim
+'''
+
+[[plugins]]
+repo = 't9md/vim-quickhl'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/vim-quickhl.rc.vim
+'''
+
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/vim-indent-guides.rc.vim
+'''
 
 [[plugins]]
 repo = 'LeafCage/yankround.vim'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/yankround.rc.vim
+'''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/vim-fugitive.rc.vim
+'''
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/vim-gitgutter.rc.vim
+'''
 
 [[plugins]]
 repo = 'AndrewRadev/switch.vim'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/switch.rc.vim
+'''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -45,13 +110,82 @@ repo = 'kana/vim-operator-user'
 repo = 'kana/vim-operator-replace'
 
 [[plugins]]
+repo = 'emonkak/vim-operator-comment'
+
+[[plugins]]
+repo = 'osyo-manga/vim-operator-jump_side'
+
+[[plugins]]
+repo = 'tyru/operator-camelize.vim'
+
+[[plugins]]
 repo = 'kana/vim-textobj-user'
 
 [[plugins]]
 repo = 'kana/vim-textobj-line'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/vim-textobj-line.rc.vim
+'''
+
+[[plugins]]
+repo = 'kana/vim-textobj-indent'
+
+[[plugins]]
+repo = 'kana/vim-textobj-jabraces'
+
+[[plugins]]
+repo = 'thinca/vim-textobj-comment'
+
+[[plugins]]
+repo = 'thinca/vim-textobj-between'
+
+[[plugins]]
+repo = 'osyo-manga/vim-textobj-multiblock'
+
+[[plugins]]
+repo = 't9md/vim-textmanip'
+
+[[plugins]]
+repo = 'sgur/vim-textobj-parameter'
+
+[[plugins]]
+repo = 'osyo-manga/vim-textobj-multitextobj'
+
+[[plugins]]
+repo = 'kana/vim-textobj-function'
+
+[[plugins]]
+repo = 'kana/vim-textobj-entire'
+
+[[plugins]]
+repo = 'mattn/vim-textobj-url'
+
+[[plugins]]
+repo = 'kana/vim-textobj-fold'
+
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+[[plugins]]
+repo = 'mattn/excitetranslate-vim'
+hook_add = '''
+:cnoremap <C-e> ExciteTranslate<CR>
+'''
 
 [[plugins]]
 repo = 'ntpeters/vim-better-whitespace'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/vim-better-whitespace.rc.vim
+'''
+
+[[plugins]]
+repo = 'thinca/vim-fontzoom'
+gui = 1
+hook_add = '''
+"nnoremap + :Fontzoom +1<CR>
+"nnoremap - :Fontzoom -1<CR>
+"nnoremap ! :Fontzoom!<CR>
+'''
 
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'

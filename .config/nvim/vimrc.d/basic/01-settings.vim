@@ -2,16 +2,16 @@
 autocmd FileType * set formatoptions-=ro
 
 " BOMを削除
-set nobomb                                   
+set nobomb
 
 " 更新時自動再読込み
-set autoread                                 
+set autoread
 
 " 全角記号を正しく表示させる
-set ambiwidth=double			     
+set ambiwidth=double
 
 " バックスペースで消す
-set backspace=indent,eol,start               
+set backspace=indent,eol,start
 
 " バックアップを書かない
 set nowritebackup
@@ -20,46 +20,46 @@ set nowritebackup
 set nobackup
 
 " swapをつくらない
-set noswapfile                               
+set noswapfile
 
 " ビープ音を無効
 set vb t_vb=
 
 " カーソルが何行目の何列目に置かれているかを表示
-set ruler                                    
+set ruler
 
 " コマンド補完を強化
-set wildmenu                                 
+set wildmenu
 
 " リスト表示
-set wildmode=list,full                       
+set wildmode=list,full
 
 " 日本語ヘルプ@enで英語
-set helplang=ja,en                           
+set helplang=ja,en
 
 " 編集中でも他のファイルを開けるようにする
-set hidden                                   
+set hidden
 
 " insertモードで自動で日本語切り替えさせない
-set iminsert=0                               
+set iminsert=0
 
 " serachで自動で日本語切り替えさせない
-set imsearch=0                               
+set imsearch=0
 
 " ステータスライン表示
-set showcmd				     
+set showcmd
 
 " 常にステータスライン表示
-set laststatus=2                             
+set laststatus=2
 
 " 10行以上でスクロール
-set scrolloff=10			     
+set scrolloff=10
 
 " 不可視文字の設定
 set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:%,eol:$
 
 " アルファベットをインクリメント、8進数除去
-set nf=alpha,hex                             
+set nf=alpha,hex
 
 " タブ幅の設定
 set tabstop=4
