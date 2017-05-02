@@ -106,6 +106,9 @@ source ~/.config/nvim/vimrc.d/plugins/switch.rc.vim
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/lightline.rc.vim
+'''
 
 [[plugins]]
 repo = 'kana/vim-operator-user'
