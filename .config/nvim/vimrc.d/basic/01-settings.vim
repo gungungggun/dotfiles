@@ -58,6 +58,9 @@ set scrolloff=10
 " 不可視文字の設定
 set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:%,eol:$
 
+" カーソルを行頭、行末で止まらないようにする
+set whichwrap=b,s,h,s,<,>,[,]
+
 " アルファベットをインクリメント、8進数除去
 set nf=alpha,hex
 

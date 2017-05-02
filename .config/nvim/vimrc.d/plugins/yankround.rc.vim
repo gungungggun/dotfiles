@@ -1,3 +1,4 @@
+let g:yankround_dir = get(g:, 'yankround_dir', '~/.cache/yankround')
 nmap p <Plug>(yankround-p)
 xmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)

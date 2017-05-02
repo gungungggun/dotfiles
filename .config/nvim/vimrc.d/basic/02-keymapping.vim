@@ -44,6 +44,16 @@ inoremap <C-j> <DOWN>
 inoremap <C-k> <UP>
 inoremap <C-l> <RIGHT>
 
+" Shift + 矢印でウィンドウサイズを変更
+call submode#enter_with('winsize', 'n', '', '<S-l>', '<C-w>>')
+call submode#enter_with('winsize', 'n', '', '<S-h>', '<C-w><')
+call submode#enter_with('winsize', 'n', '', '<S-j>', '<C-w>-')
+call submode#enter_with('winsize', 'n', '', '<S-k>', '<C-w>+')
+call submode#map('winsize', 'n', '', 'l', '<C-w>>')
+call submode#map('winsize', 'n', '', 'h', '<C-w><')
+call submode#map('winsize', 'n', '', 'j', '<C-w>-')
+call submode#map('winsize', 'n', '', 'k', '<C-w>+')
+
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
 

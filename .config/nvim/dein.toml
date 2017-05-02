@@ -28,6 +28,10 @@ map <silent> <unique> mm <Plug>Vm_toggle_sign
 
 [[plugins]]
 repo = 'fuenor/qfixhowm.git'
+hook_add = '''
+source ~/.config/nvim/vimrc.d/plugins/qfixhowm.rc.vim
+'''
+
 
 [[plugins]]
 repo = 'kana/vim-submode'
@@ -123,9 +127,6 @@ repo = 'kana/vim-textobj-user'
 
 [[plugins]]
 repo = 'kana/vim-textobj-line'
-hook_add = '''
-source ~/.config/nvim/vimrc.d/plugins/vim-textobj-line.rc.vim
-'''
 
 [[plugins]]
 repo = 'kana/vim-textobj-indent'
