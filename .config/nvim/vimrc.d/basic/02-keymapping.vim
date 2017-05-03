@@ -4,7 +4,8 @@ nnoremap <silent> <Space>et :edit ~/.config/nvim/dein.toml<CR>
 nnoremap <silent> <Space>eT :edit ~/.config/nvim/deinlazy.toml<CR>
 
 " windowsのNeovimでshift insertが効かないので
-map! <S-Insert> <C-R>+
+map! <S-Insert> <esc>:set paste<CR>a<C-R>+<esc>:set nopaste<CR>i
+vmap! <C-Insert> y
 
 " \ を , と置き換える
 let mapleader = ","
@@ -106,3 +107,9 @@ vnoremap > >gv|
 
 " Exモードなんて使わない
 map Q <Nop>
+
+if(has('win64'))
+	noremap <Leader>bf :silent ! start firefox %<CR>
+    noremap <Leader>bc :silent ! start chrome %<CR>
+	noremap <Leader>be :silent ! start IEXPLORE %<CR>
+endif
