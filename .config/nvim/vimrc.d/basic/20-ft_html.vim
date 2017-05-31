@@ -12,5 +12,4 @@
 	vmap <Leader>* :s/^\(.*\)$/\/\* \1 \*\//<CR>:nohlsearch<CR>
 	vmap <Leader>d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>:nohlsearch<CR>
 endfunction
-autocmd BufRead,BufNewFile *.vue set filetype=html
 autocmd BufEnter * if &filetype == "html" || &filetype == "xhtml" | call InitHtml() | endif

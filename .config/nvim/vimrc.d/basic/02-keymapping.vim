@@ -108,6 +108,11 @@ vnoremap > >gv|
 " Exモードなんて使わない
 map Q <Nop>
 
+" %の置き換え
+nmap mm %
+vmap mm %
+
+" ブラウザを開く
 if(has('win64'))
 	noremap <Leader>bf :silent ! start firefox %<CR>
     noremap <Leader>bc :silent ! start chrome %<CR>

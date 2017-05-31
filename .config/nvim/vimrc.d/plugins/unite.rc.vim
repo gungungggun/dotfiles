@@ -58,8 +58,8 @@ nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
 "\           ["KEYMAP MEMO", "edit ~/Dropbox/vimkeymap.txt"],
 "\           ["WEB URL LIST", "edit ~/Dropbox/vimwebshort.txt"],
 "\           ["HTML SPECIAL", "edit ~/Dropbox/html-specialword.txt"],
-"\	    ["AllMap", "Unite output:AllMap" ],
-"\	    ["vim", "OpenBrowser http://mba-hack.blogspot.jp/2013/02/vim.html" ],
+"\      ["AllMap", "Unite output:AllMap" ],
+"\      ["vim", "OpenBrowser http://mba-hack.blogspot.jp/2013/02/vim.html" ],
 "\       ],
 "\   },
 "\}
@@ -68,7 +68,7 @@ nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
 
 let g:unite_source_menu_menus = get(g:,'unite_source_menu_menus',{})
 let g:unite_source_menu_menus.git = {
-    \ 'description' : '            gestionar repositorios git
+    \ 'description' : 'gestionar repositorios git
         \                            ⌘ [espacio]g',
     \}
 let g:unite_source_menu_menus.git.command_candidates = [
@@ -101,4 +101,14 @@ let g:unite_source_menu_menus.git.command_candidates = [
     \['▷ git cd           (Fugitive)',
         \'Gcd'],
     \]
-nnoremap <silent>[menu]g :Unite -silent -start-insert menu:git<CR>
+
+let g:unite_source_menu_menus.html = {
+    \ 'description' : 'html special char'
+    \}
+let g:unite_source_menu_menus.html.command_candidates= [
+    \['&nbsp; " " 空白',         'normal a&nbsp;'],
+    \['&quot; """ クォート',     'normal a&quot;'],
+    \['&amp;  "&" アンパサンド', 'normal a&amp;'],
+    \['&lt;   "<" 小なり',       'normal a&lt;'],
+    \['&gt;   ">" 大なり',       'normal a&gt;'],
+    \]

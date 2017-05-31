@@ -65,6 +65,7 @@ set whichwrap=b,s,h,s,<,>,[,]
 set nf=alpha,hex
 
 " タブ幅の設定
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4

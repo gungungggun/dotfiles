@@ -8,11 +8,14 @@ on_ft = ['toml']
 
 [[plugins]]
 repo = 'tpope/vim-markdown'
-on_ft = ['md']
+on_ft = ['markdown']
 
 [[plugins]]
 repo = 'kannokanno/previm'
-on_ft = ['md']
+on_ft = ['markdown']
+hook_add = '''
+noremap <Leader>bm :PrevimOpen<CR>
+'''
 
 [[plugins]]
 repo = 'othree/html5.vim'
@@ -20,15 +23,23 @@ on_ft = ['html']
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
+on_ft = ['html', 'jade', 'pug', 'vue']
+
+[[plugins]]
+repo = 'tmhedberg/matchit'
 on_ft = ['html']
 
 [[plugins]]
 repo = 'digitaltoad/vim-pug'
-on_ft = ['jade', 'pug']
+on_ft = ['jade', 'pug', 'vue']
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
 
 [[plugins]]
 repo = 'wavded/vim-stylus'
-on_ft = ['styl']
+on_ft = ['styl', 'vue']
 
 [[plugins]]
 repo = 'fatih/vim-go'
@@ -47,10 +58,6 @@ repo = 'osyo-manga/vim-precious'
 on_ft = ['vue']
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-on_path = '.*'
-
-[[plugins]]
 repo = 'Shougo/unite.vim'
 on_cmd = ['Unite', 'UniteWithBufferDir']
 hook_add = '''
@@ -61,6 +68,10 @@ source ~/.config/nvim/vimrc.d/plugins/unite.rc.vim
 repo = 'Shougo/neoyank.vim'
 on_path = '.*'
 on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
 
 [[plugins]]
 repo = 'ujihisa/unite-colorscheme'
@@ -75,7 +86,7 @@ repo = 'rhysd/unite-codic.vim'
 on_source = ['unite.vim']
 
 [[plugins]]
-repo = 'h1mesuke/unite-outline'
+repo = 'Shougo/unite-outline'
 on_source = ['unite.vim']
 
 [[plugins]]

@@ -11,7 +11,7 @@ let g:syntastic_css_checkers = ['csslint']
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
       \ 'active_filetypes': ['ruby', 'javascript'],
-      \ 'passive_filetypes': ['php', 'css']
+      \ 'passive_filetypes': ['php', 'html', 'css']
       \ }
 "エラー表示マークを変更
 let g:syntastic_enable_signs=1

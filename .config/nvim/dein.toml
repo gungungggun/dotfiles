@@ -1,6 +1,10 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
 #[[plugins]] # solarized
 #repo = 'altercation/vim-colors-solarized'
 
@@ -23,7 +27,6 @@ repo = 'AndrewRadev/splitjoin.vim'
 repo = 'vim-scripts/Visual-Mark'
 hook_add = '''
 map <unique> <F3> <Plug>Vm_toggle_sign
-map <silent> <unique> mm <Plug>Vm_toggle_sign
 '''
 
 [[plugins]]
