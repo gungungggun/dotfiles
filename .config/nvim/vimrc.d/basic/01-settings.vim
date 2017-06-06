@@ -78,7 +78,7 @@ set smartindent
 set lazyredraw
 
 " viminfoの設定
-set viminfo=~/.cache/.viminfo
+"set viminfo=~/.cache/.viminfo
 
 " undoファイルの有効
 set undofile

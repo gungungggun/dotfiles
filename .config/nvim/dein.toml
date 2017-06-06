@@ -80,7 +80,7 @@ source ~/.config/nvim/vimrc.d/plugins/vim-quickhl.rc.vim
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
-source ~/.config/nvim/vimrc.d/plugins/vim-indent-guides.rc.vim
+"source ~/.config/nvim/vimrc.d/plugins/vim-indent-guides.rc.vim
 '''
 
 [[plugins]]

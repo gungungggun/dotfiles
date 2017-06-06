@@ -4,8 +4,10 @@ nnoremap <silent> <Space>et :edit ~/.config/nvim/dein.toml<CR>
 nnoremap <silent> <Space>eT :edit ~/.config/nvim/deinlazy.toml<CR>
 
 " windowsのNeovimでshift insertが効かないので
-map! <S-Insert> <esc>:set paste<CR>a<C-R>+<esc>:set nopaste<CR>i
-vmap! <C-Insert> y
+if has('win32') || has('win64')
+    map! <S-Insert> <esc>:set paste<CR>a<C-R>+<esc>:set nopaste<CR>i
+    vmap <C-Insert> y
+endif
 
 " \ を , と置き換える
 let mapleader = ","

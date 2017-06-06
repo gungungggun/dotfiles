@@ -8,13 +8,14 @@ cd ~
 export LANG=ja_JP.UTF-8
 
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:~/.local/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:~/.local/bin:/usr/local/bin
+export PATH=$PATH:~/.nodebrew/current/bin
 
 export XDG_CONFIG_HOME=$HOME/.config
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 export WIN_HOME=/mnt/c/Users/gungu
-#export TERM=xterm-256color
+export TERM=xterm-256color
 
 ###########
 # general
@@ -131,7 +132,7 @@ alias back='pushd'
 alias -g @g='| ag'
 
 # cdの後にlsを実行
-chpwd() { ls -ltr --color=auto }
+chpwd() { ls -ll }
 
 # backspace,deleteキーを使えるように
 stty erase ^H
