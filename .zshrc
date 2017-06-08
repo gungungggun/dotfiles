@@ -1,4 +1,4 @@
-cd ~
+#cd ~
 
 ###########
 # env
@@ -8,13 +8,18 @@ cd ~
 export LANG=ja_JP.UTF-8
 
 export GOPATH=$HOME/go
+export ANDROID_HOME=/usr/local/share/android-sdk
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:~/.local/bin:/usr/local/bin
 export PATH=$PATH:~/.nodebrew/current/bin
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 export XDG_CONFIG_HOME=$HOME/.config
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 export WIN_HOME=/mnt/c/Users/gungu
+export CLICOLOR=1
 export TERM=xterm-256color
 
 ###########
