@@ -25,7 +25,7 @@ let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
 set showtabline=2 " 常にタブラインを表示
 
 nnoremap [Tab] <Nop>
-nmap t [Tab]
+nmap <Space>t [Tab]
 
 " t+数値でタブジャンプ
 for n in range(1, 9)
