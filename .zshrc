@@ -7,7 +7,12 @@
 # 日本語を使用
 export LANG=ja_JP.UTF-8
 
+export EDITOR=nvim
+
 export GOPATH=$HOME/go
+export GO15VENDOREXPERIMENT=1
+eval "$(direnv hook zsh)"
+
 export ANDROID_HOME=/usr/local/share/android-sdk
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
