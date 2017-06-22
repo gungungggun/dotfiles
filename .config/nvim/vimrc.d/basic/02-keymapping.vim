@@ -79,6 +79,7 @@ nnoremap <silent> <Space>/. :setl spell!<CR>:setl spell?<CR>
 nnoremap <silent> <Space>// :set expandtab!<CR>
 " タブとスペースを変換
 nnoremap <silent> <Space>/\ :retab!<CR>
+nnoremap <silent> <Space>/_ :retab!<CR>
 " カーソル位置
 nnoremap <silent> <Space>c :<C-u>setlocal cursorline! cursorcolumn!<CR>
 

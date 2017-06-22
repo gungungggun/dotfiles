@@ -125,6 +125,14 @@ setopt inc_append_history
 #bindkey "^P" history-incremental-search-backward
 #bindkey "^N" history-incremental-search-forward
 
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
 
 ###########
 # alias
