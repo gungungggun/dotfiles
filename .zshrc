@@ -134,6 +134,65 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
+
+###########
+# cdr
+###########
+
+# cdr, add-zsh-hook を有効にする
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+# cdr の設定
+zstyle ':completion:*' recent-dirs-insert both
+zstyle ':chpwd:*' recent-dirs-max 500
+zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
+zstyle ':chpwd:*' recent-dirs-pushd true
+
+function peco-cdr () {
+    local selected_dir="$(cdr -l | sed 's/^[0-9]\+ \+//' | peco --prompt="cdr >" --query "$LBUFFER")"
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+}
+zle -N peco-cdr
+bindkey '^J' peco-cdr
+
+###########
+# ssh
+###########
+
+function _get_hosts() {
+    # historyを番号なし、逆順、ssh*にマッチするものを1番目から表示
+    # 最後の項をhost名と仮定してhost部分を取り出す
+    local hosts
+    ssh_hist="$(history -nrm 'ssh*' 1 | \grep 'ssh ')"
+    hosts="$(echo $ssh_hist | perl -pe 's/ssh(\s+-([1246AaCfGgKkMNnqsTtVvXxYy]|[^1246AaCfGgKkMNnqsTtVvXxYy]\s+\S+))*\s+(\S+@)?//' | cut -d' ' -f1)"
+    #                                        -----------------------------------------------------------------------   -------
+    #                                                        hostnameよりも前にあるオプション                          user@     を削除
+    # know_hostsからもホスト名を取り出す
+    # portを指定したり、ip指定でsshしていると
+    #   [hoge.com]:2222,[\d{3}.\d{3].\d{3}.\d{3}]:2222
+    # といったものもあるのでそれにも対応している
+    hosts="$hosts\n$(cut -d' ' -f1  ~/.ssh/known_hosts | tr -d '[]' | tr ',' '\n' | cut -d: -f1)"
+    hosts=$(echo $hosts | awk '!a[$0]++')
+    echo $hosts
+}
+
+function peco-ssh() {
+    hosts=`_get_hosts`
+    local selected_host=$(echo $hosts | peco --prompt="ssh >" --query "$LBUFFER")
+    if [ -n "$selected_host" ]; then
+        BUFFER="ssh ${selected_host}"
+        zle accept-line
+    fi
+}
+zle -N peco-ssh
+bindkey '^A' peco-ssh
+
+
 ###########
 # alias
 ###########
