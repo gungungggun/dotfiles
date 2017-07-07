@@ -6,3 +6,4 @@ nnoremap <silent> [buffer]n :bnext<CR>
 nnoremap <silent> [buffer]b :b#<CR>
 nnoremap <silent> [buffer]d :bdelete<CR>
 nnoremap <silent> [buffer]c :enew<CR>
+nnoremap <silent> [buffer]x :%bd<CR>

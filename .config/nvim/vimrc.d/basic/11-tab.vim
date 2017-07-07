@@ -35,8 +35,10 @@ endfor
 " tc 新しいタブを一番右に作る
 map <silent> [Tab]c :tablast <bar> tabnew<CR>
 " tx タブを閉じる
-map <silent> [Tab]x :tabclose<CR>
+map <silent> [Tab]d :tabclose<CR>
 " tn 次のタブ
 map <silent> [Tab]n :tabnext<CR>
 " tp 前のタブ
 map <silent> [Tab]p :tabprevious<CR>
+" タブ全消し（バッファけしと同じ）
+map <silent> [Tab]x :%bd<CR>
