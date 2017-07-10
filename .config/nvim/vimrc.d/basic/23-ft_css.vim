@@ -7,4 +7,4 @@
 	setlocal autoindent
 	setlocal smartindent
 endfunction
-autocmd BufEnter * if &filetype == "css" || &filetype == "scss" || &filetype == "styl" | call InitCss() | endif
+autocmd BufEnter * if &filetype == "css" || &filetype == "scss" || &filetype == "styl" || &filetype == "stylus" | call InitCss() | endif
