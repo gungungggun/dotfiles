@@ -88,3 +88,6 @@ set undodir=~/.cache/undo
 
 " python3のパス
 let g:python3_host_prog = 'C:\Program Files\Python36\python.exe'
+
+" クリップボード
+set clipboard+=unnamedplus
