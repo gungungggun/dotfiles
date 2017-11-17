@@ -2,3 +2,4 @@
 /.config/configstore
 /.config/direnv
 /.config/composer
+/.config/nvim/vimrc.d/.netrwhist

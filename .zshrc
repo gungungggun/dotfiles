@@ -16,7 +16,8 @@ eval "$(direnv hook zsh)"
 export ANDROID_HOME=/usr/local/share/android-sdk
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:~/.local/bin:/usr/local/bin
+export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:~/.local/bin
 export PATH=$PATH:~/.nodebrew/current/bin
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
