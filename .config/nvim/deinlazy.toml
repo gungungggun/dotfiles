@@ -36,6 +36,10 @@ repo = 'tmhedberg/matchit'
 on_ft = ['html']
 
 [[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = ['coffee', 'vue']
+
+[[plugins]]
 repo = 'digitaltoad/vim-pug'
 on_ft = ['jade', 'pug', 'vue']
 
