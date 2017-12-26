@@ -28,6 +28,8 @@ export WIN_HOME=/mnt/c/Users/gungu
 export CLICOLOR=1
 export TERM=xterm-256color
 
+export DYNAMO_ENDPOINT=http://localhost:8000
+
 ###########
 # general
 ###########
