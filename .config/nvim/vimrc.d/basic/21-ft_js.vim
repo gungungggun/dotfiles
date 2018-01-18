@@ -8,4 +8,4 @@
 	setlocal smartindent
 	setlocal cinwords=if,elseif,else,for,while,try,except,class
 endfunction
-autocmd BufEnter * if &filetype == "javascript" || &filetype == "js" || &filetype == "vue" | call InitJs() | endif
+autocmd BufEnter * if &filetype == "javascript" || &filetype == "js" || &filetype == "coffee" || &filetype == "vue" | call InitJs() | endif
