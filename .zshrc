@@ -22,6 +22,8 @@ export PATH=$PATH:~/.nodebrew/current/bin
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 export XDG_CONFIG_HOME=$HOME/.config
+export PATH=$PATH:$XDG_CONFIG_HOME/composer/vendor/bin
+
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 export WIN_HOME=/mnt/c/Users/gungu
