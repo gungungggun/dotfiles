@@ -281,3 +281,11 @@ function peco-branch () {
 }
 zle -N peco-branch
 bindkey "^gb" peco-branch
+
+function peco-vi () {
+    local vi=$(find . -type f -maxdepth 1 | peco)
+    if [ -n "$vi" ]; then
+        vi $vi
+    fi
+}
+alias vv='peco-vi'
