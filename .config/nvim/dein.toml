@@ -187,14 +187,30 @@ hook_add = '''
 source ~/.config/nvim/vimrc.d/plugins/vim-better-whitespace.rc.vim
 '''
 
-[[plugins]]
-repo = 'thinca/vim-fontzoom'
-gui = 1
-hook_add = '''
-"nnoremap + :Fontzoom +1<CR>
-"nnoremap - :Fontzoom -1<CR>
-"nnoremap ! :Fontzoom!<CR>
-'''
+#[[plugins]]
+#repo = 'thinca/vim-fontzoom'
+#gui = 1
+#hook_add = '''
+#"nnoremap + :Fontzoom +1<CR>
+#"nnoremap - :Fontzoom -1<CR>
+#"nnoremap ! :Fontzoom!<CR>
+#'''
 
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
+
+[[plugins]]
+repo = 'rhysd/nyaovim-popup-tooltip'
+gui = 1
+hook_add = '''
+nmap <silent>gi <Plug>(nyaovim-popup-tooltip-open)
+vmap <silent>gi <Plug>(nyaovim-popup-tooltip-open)
+'''
+
+[[plugins]]
+repo = 'rhysd/nyaovim-mini-browser'
+gui = 1
+
+[[plugins]]
+repo = 'rhysd/nyaovim-running-gopher'
+gui = 1

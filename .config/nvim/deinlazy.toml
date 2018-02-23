@@ -140,7 +140,11 @@ let g:loaded_python_provider = 1
 let g:mundo_prefer_python3 = 1
 '''
 
-
 [[plugins]]
 repo = 'itchyny/thumbnail.vim'
 on_cmd = ['Thumbnail']
+
+[[plugins]]
+repo = 'rhysd/nyaovim-markdown-preview'
+on_ft = ['markdown']
+gui = 1
