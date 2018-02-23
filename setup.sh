@@ -4,6 +4,7 @@
 SYMLINK_LIST="
 .zshrc
 .gitconfig
+.gitignore_global
 .tmux.conf
 .config
 "
