@@ -85,8 +85,8 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # lsがカラー表示になるようエイリアスを設定
 case "${OSTYPE}" in
-darwin*)
-# Mac
+    darwin*)
+    # Mac
     alias ls="ls -GF"
     ;;
     linux*)
@@ -230,6 +230,13 @@ chpwd() { ls -ll }
 # backspace,deleteキーを使えるように
 stty erase ^H
 bindkey "^[[3~" delete-char
+
+case "${OSTYPE}" in
+    darwin*)
+    # Mac
+    alias lsusb='system_profiler SPUSBDataType'
+    ;;
+esac
 
 ###########
 # my command
