@@ -4,3 +4,4 @@
 /.config/composer
 /.config/nvim/vimrc.d/.netrwhist
 /.config/htop
+/.config/wireshark
