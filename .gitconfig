@@ -6,5 +6,7 @@
 [core]
 	autoCRLF = false
     excludesfile = ~/.gitignore_global
+[alias]
+    lg = log --graph --oneline
 [ghq]
 	root = ~/go/src
