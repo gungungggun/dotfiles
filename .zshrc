@@ -296,3 +296,10 @@ function peco-vi () {
     fi
 }
 alias vv='peco-vi'
+
+###########
+# tns-completion
+###########
+if [ -f /Users/gun/.tnsrc ]; then
+    source /Users/gun/.tnsrc
+fi
