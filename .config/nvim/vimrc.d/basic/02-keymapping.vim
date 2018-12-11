@@ -121,3 +121,5 @@ if(has('win64'))
     noremap <Leader>bc :silent ! start chrome %<CR>
 	noremap <Leader>be :silent ! start IEXPLORE %<CR>
 endif
+
+nnoremap <silent> <Space>x :%!xmllint --format -<CR>
