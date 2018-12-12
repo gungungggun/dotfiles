@@ -305,6 +305,13 @@ if [ -f /Users/gun/.tnsrc ]; then
 fi
 
 ###########
+# neofetch
+###########
+if type "neofetch" > /dev/null 2>&1; then
+    neofetch
+fi
+
+###########
 # zplug
 ###########
 export ZPLUG_HOME=/usr/local/opt/zplug
