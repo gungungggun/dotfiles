@@ -245,6 +245,10 @@ esac
 # mkdir & cd
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
+function sp () {
+  echo -e "\033]1337;SetProfile=$@\a"
+}
+
 
 ###########
 # git
