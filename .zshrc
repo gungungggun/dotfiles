@@ -14,6 +14,7 @@ export GO15VENDOREXPERIMENT=1
 eval "$(direnv hook zsh)"
 
 export ANDROID_HOME=/usr/local/share/android-sdk
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 export PATH=/usr/local/bin:$PATH
@@ -300,6 +301,10 @@ function fzf-vi () {
     fi
 }
 alias vv='fzf-vi'
+
+function imginfo() {
+    imgcat $1 && sips --getProperty pixelHeight --getProperty pixelWidth $1;
+}
 
 ###########
 # tns-completion
