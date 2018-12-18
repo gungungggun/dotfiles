@@ -64,7 +64,7 @@ setopt pushd_ignore_dups
 setopt correct
 
 # tmuxの起動
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+# [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 # 名前付きディレクトリ
 setopt CDABLE_VARS
@@ -130,14 +130,14 @@ setopt inc_append_history
 #bindkey "^P" history-incremental-search-backward
 #bindkey "^N" history-incremental-search-forward
 
-function peco-history-selection() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+function fzf-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | fzf --reverse`
     CURSOR=$#BUFFER
     zle reset-prompt
 }
 
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
+zle -N fzf-history-selection
+bindkey '^R' fzf-history-selection
 
 
 ###########
@@ -156,15 +156,15 @@ zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
 zstyle ':chpwd:*' recent-dirs-pushd true
 
 # ### search a destination from cdr list
-function peco-get-destination-from-cdr() {
+function fzf-get-destination-from-cdr() {
   cdr -l | \
   sed -e 's/^[[:digit:]]*[[:blank:]]*//' | \
-  peco --query "$LBUFFER"
+  fzf --query "$LBUFFER"
 }
 
 ### search a destination from cdr list and cd the destination
-function peco-cdr() {
-  local destination="$(peco-get-destination-from-cdr)"
+function fzf-cdr() {
+  local destination="$(fzf-get-destination-from-cdr)"
   if [ -n "$destination" ]; then
     BUFFER="cd $destination"
     zle accept-line
@@ -173,8 +173,8 @@ function peco-cdr() {
   fi
 }
 
-zle -N peco-cdr
-bindkey '^X' peco-cdr
+zle -N fzf-cdr
+bindkey '^X' fzf-cdr
 
 ###########
 # ssh
@@ -197,16 +197,16 @@ function _get_hosts() {
     echo $hosts
 }
 
-function peco-ssh() {
+function fzf-ssh() {
     hosts=`_get_hosts`
-    local selected_host=$(echo $hosts | peco --prompt="ssh >" --query "$LBUFFER")
+    local selected_host=$(echo $hosts | fzf --reverse --prompt="ssh >" --query "$LBUFFER")
     if [ -n "$selected_host" ]; then
         BUFFER="ssh ${selected_host}"
         zle accept-line
     fi
 }
-zle -N peco-ssh
-bindkey '^A' peco-ssh
+zle -N fzf-ssh
+bindkey '^A' fzf-ssh
 
 
 ###########
@@ -264,9 +264,9 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
-function peco-select-gitadd() {
+function fzf-select-gitadd() {
     local SELECTED_FILE_TO_ADD="$(git status --porcelain | \
-                                  peco --query "$LBUFFER" | \
+                                  fzf --query "$LBUFFER" | \
                                   awk -F ' ' '{print $NF}')"
     if [ -n "$SELECTED_FILE_TO_ADD" ]; then
       BUFFER="git add $(echo "$SELECTED_FILE_TO_ADD" | tr '\n' ' ')"
@@ -275,11 +275,11 @@ function peco-select-gitadd() {
     zle accept-line
     # zle clear-screen
 }
-zle -N peco-select-gitadd
-bindkey "^g^a" peco-select-gitadd
+zle -N fzf-select-gitadd
+bindkey "^g^a" fzf-select-gitadd
 
-function peco-branch () {
-    local branch=$(git branch -a | peco | tr -d ' ' | tr -d '*')
+function fzf-branch () {
+    local branch=$(git branch -a | fzf | tr -d ' ' | tr -d '*')
     if [ -n "$branch" ]; then
       if [ -n "$LBUFFER" ]; then
         local new_left="${LBUFFER%\ } $branch"
@@ -290,16 +290,16 @@ function peco-branch () {
       CURSOR=${#new_left}
     fi
 }
-zle -N peco-branch
-bindkey "^gb" peco-branch
+zle -N fzf-branch
+bindkey "^gb" fzf-branch
 
-function peco-vi () {
-    local vi=$(find . -type f -maxdepth 1 | peco)
+function fzf-vi () {
+    local vi=$(find . -type f -maxdepth 1 | fzf --reverse)
     if [ -n "$vi" ]; then
         vi $vi
     fi
 }
-alias vv='peco-vi'
+alias vv='fzf-vi'
 
 ###########
 # tns-completion
