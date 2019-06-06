@@ -5,8 +5,8 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
-[[plugins]] # solarized
-repo = 'altercation/vim-colors-solarized'
+#[[plugins]] # solarized
+#repo = 'altercation/vim-colors-solarized'
 
 [[plugins]] # solarized(qt)
 repo = 'JulioJu/neovim-qt-colors-solarized-truecolor-only'
