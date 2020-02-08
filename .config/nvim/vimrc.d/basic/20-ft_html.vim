@@ -12,4 +12,4 @@
 	vmap <Leader>* :s/^\(.*\)$/\/\* \1 \*\//<CR>:nohlsearch<CR>
 	vmap <Leader>d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>:nohlsearch<CR>
 endfunction
-autocmd BufEnter * if &filetype == "html" || &filetype == "xhtml" | call InitHtml() | endif
+autocmd BufEnter * if &filetype == "html" || &filetype == "svg" || &filetype == "xhtml" | call InitHtml() | endif

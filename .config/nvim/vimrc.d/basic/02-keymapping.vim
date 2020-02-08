@@ -123,3 +123,7 @@ if(has('win64'))
 endif
 
 nnoremap <silent> <Space>x :%!xmllint --format -<CR>
+
+" 同じインデントに移動
+nnoremap <C-k> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
+nnoremap <C-j> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
