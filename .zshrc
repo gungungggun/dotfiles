@@ -339,3 +339,5 @@ fi
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug load --verbose
+
+eval "$(direnv hook zsh)"
