@@ -340,4 +340,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug load --verbose
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 eval "$(direnv hook zsh)"
