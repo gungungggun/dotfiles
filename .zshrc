@@ -215,7 +215,8 @@ bindkey '^A' fzf-ssh
 ###########
 
 alias vi=nvim
-alias ll='ls -la'
+#alias ll='ls -la'
+alias ll='exa -lahgH'
 alias rm='rm -i'
 alias mkdir='mkdir -p'
 alias ag='ag -S --stats'
@@ -226,7 +227,7 @@ alias back='pushd'
 alias -g @g='| ag'
 
 # cdの後にlsを実行
-chpwd() { ls -ll }
+chpwd() { ll }
 
 # backspace,deleteキーを使えるように
 stty erase ^H
