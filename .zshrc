@@ -33,6 +33,8 @@ export TERM=xterm-256color
 
 export DYNAMO_ENDPOINT=http://localhost:8000
 
+export SUDO_PROMPT="[sudo] さっさとパスワード入れなさいよ、このバカ！＞"
+
 ###########
 # general
 ###########
